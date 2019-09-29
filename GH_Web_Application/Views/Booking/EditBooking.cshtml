@@ -1,0 +1,122 @@
+﻿@model Booking
+@{
+    ViewData["Title"] = "CreateBooking";
+    Layout = "_PanelLayout";
+}
+
+<main class="main-content bgc-grey-100">
+    <div id="mainContent">
+        <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+
+        <div class="container">
+            <div class="row">
+                <!-- SUBMENU START -->
+                @Html.Partial("BookingSubmenu")
+                <!-- SUBMENU END -->
+                <!-- MAIN CONTENT START -->
+                <div class="col-md-9">
+                    <div class="osahan-account-page-right shadow-sm bg-white p-30 h-100">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane  fade  active show" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                                <div class="bg-white card mb-4 order-list shadow-sm">
+                                    <div class="gold-members p-10">
+
+                                        <div class="media">
+
+                                            <div class="col-12">
+                                                <div class="media-body">
+                                                    <form asp-action="UpdateBooking" asp-controller="Booking" method="post">
+                                                        <input asp-for="BookingId" type="hidden" value="@Model.BookingId" />
+                                                        <div class="form-group row">
+                                                            <label asp-for="BookingTitle" class="col-sm-2 col-form-label">Title</label>
+                                                            <div class="col-sm-10">
+                                                                <input asp-for="BookingTitle" type="text" class="form-control" id="title" value="@Model.BookingTitle" required>                                                              
+                                                            </div>
+                                                        </div>
+                                                        <div class="form-group row">
+                                                            <label asp-for="Location" class="col-sm-2 col-form-label">Location</label>
+                                                            <div class="col-sm-10">
+                                                                <input asp-for="Location" type="text" class="form-control" id="location" required>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <div class="form-group row">
+                                                                    <label asp-for="CategoryId" class="col-sm-4 col-form-label">Category</label>
+                                                                    <div class="col-sm-8">
+                                                                        <select asp-for="CategoryId" id="category" class="form-control" required >
+                                                                            <option selected>@Model.CategoryId</option>
+                                                                            <option value="999">Electric</option>
+                                                                            <option value="888">Plumbing</option>
+                                                                            <option value="777">Flooring</option>
+                                                                            <option value="666">Landscaping</option>
+                                                                            <option value="555">Gardening</option>
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group row">
+                                                                    <label asp-for="Date" class="col-sm-4 col-form-label">Date</label>
+                                                                    <div class="col-sm-8">
+                                                                        <div class="input-group">
+                                                                            <div class="input-group-addon">
+                                                                                <i class="fa fa-calendar">
+                                                                                </i>
+                                                                            </div>
+                                                                            <input asp-for="Date" class="form-control" id="date" name="date" placeholder="MM/DD/YYYY" type="text" value="@Model.Date"/>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label asp-for="WorkingDetail" class="col-sm-2 col-form-label">Description</label>
+                                                            <div class="col-sm-10 ">
+                                                                <textarea asp-for="WorkingDetail" class="form-control" id="description" rows="7" required>@Model.WorkingDetail</textarea>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group row">
+                                                            <label asp-for="Price" class="col-sm-2 col-form-label">Price</label>
+                                                            <div class="col-sm-10">
+                                                                <input asp-for="Price" type="number" class="form-control" id="price" placeholder="$" value="@Model.Price" required>
+                                                            </div>
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <div class="peers ai-c jc-sb fxw-nw">
+                                                                <div class="peer"></div>
+                                                                <div class="peer">
+                                                                    <!--Update button-->
+                                                                    <button type="submit" class="btn btn-primary">Update</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </form>
+
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <hr>
+                                        <div class="media">
+                                            <div class="col-12 text-center">
+                                                <a class="btn btn-sm btn-outline-primary mb-2" asp-action="Booking">BACK TO LIST</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MAIN CONTENT END -->
+            </div>
+        </div>
+    </div>
+</main>

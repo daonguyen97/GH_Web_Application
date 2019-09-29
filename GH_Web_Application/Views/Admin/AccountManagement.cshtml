@@ -1,0 +1,32 @@
+﻿@model IEnumerable<UserAccount>
+@{
+    ViewData["Title"] = "Administrator Management";
+    Layout = "_AdminLayout";
+}
+
+
+<h1>List of Feedbacks</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Phone Number</th>
+            <th scope="col">Rating</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (UserAccount item in Model)
+        {
+            <tr>
+                <th scope="row">@item.UserId</th>
+                <td>@item.EmailAddress</td>
+                <td>@item.Password</td>
+                <td>@item.PhoneNumber</td>
+                <td>@item.Rating</td>
+            </tr>
+        }
+    </tbody>
+</table>

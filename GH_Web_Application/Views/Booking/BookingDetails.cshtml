@@ -1,0 +1,82 @@
+﻿@model Booking
+@{
+    ViewData["Title"] = "BookingDetails";
+    Layout = "_PanelLayout";
+}
+
+<main class="main-content bgc-grey-100">
+    <div id="mainContent">
+        <link rel="stylesheet" href="https://allyoucan.cloud/cdn/icofont/1.0.1/icofont.css" integrity="sha384-jbCTJB16Q17718YM9U22iJkhuGbS0Gd2LjaWb4YJEZToOPmnKDjySVa323U+W7Fv" crossorigin="anonymous">
+
+        <div class="container">
+            <div class="row">
+                <!-- SUBMENU START -->
+                @Html.Partial("BookingSubmenu")
+                <!-- SUBMENU END -->
+                <!-- MAIN CONTENT START -->
+                <div class="col-md-9">
+                    <div class="osahan-account-page-right shadow-sm bg-white p-30 h-100">
+                        <div class="tab-content" id="myTabContent">
+                            <div class="tab-pane  fade  active show" id="orders" role="tabpanel" aria-labelledby="orders-tab">
+                                <div class="bg-white card mb-4 order-list shadow-sm">
+                                    <div class="gold-members p-10">
+                                        <div class="media">
+                                            <div class="col-4">
+                                                <a href="#">
+                                                 <!--   <img class="mr-4 mb-3" src="https://networkfix.ca/wp-content/uploads/2018/09/Security-Camera-Installation.png" alt="Generic placeholder image"> -->
+                                                </a>
+                                                <div class="text-center pr-3">
+                                                    <form asp-action="EditBooking" method="get">
+                                                        <input type="hidden" name="BookingId" value="@Model.BookingId" />
+                                                        <button type="submit" class="btn btn-sm btn-primary mb-2">Edit</button>
+                                                        <a asp-action="DeleteBooking" class="btn btn-sm btn-outline-danger">Delete</a>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="col-8">
+                                                <div class="media-body">
+                                                    <h6 class="mb-2">
+                                                        <a href="#"></a>
+                                                        <a href="#" class="text-black font-weight-bold">@Model.BookingTitle</a>
+                                                    </h6>
+                                                    <p class="text-gray mb-1">Location: @Model.Location</p>
+                                                    <p class="text-gray mb-1">Category: @Model.CategoryId</p>                                          
+                                                    <p class="text-gray mb-3">Available on: @Model.Date </p>
+                                                    <p class="mb-3 text-dark pt-2">Total Paid: @Model.Price </p>
+                                                    <p class="text-dark">DESCRIPTION: @Model.WorkingDetail </p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <hr>
+                                        <div class="media">
+                                            <!--<div class="col-4">
+                                                <img class="mr-4" src="https://networkfix.ca/wp-content/uploads/2018/09/Security-Camera-Installation.png" alt="Generic placeholder image">
+                                            </div>
+                                            <div class="col-4">
+                                                <img class="mr-4" src="https://networkfix.ca/wp-content/uploads/2018/09/Security-Camera-Installation.png" alt="Generic placeholder image">
+                                            </div>
+                                            <div class="col-4">
+                                                <img class="mr-4" src="https://networkfix.ca/wp-content/uploads/2018/09/Security-Camera-Installation.png" alt="Generic placeholder image">
+                                            </div>
+                                                -->
+                                        </div>
+                                        <hr>
+                                        <div class="media">
+                                            <div class="col-12 text-center">
+                                                <a class="btn btn-sm btn-outline-primary mb-2" asp-action="Index">BACK</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- MAIN CONTENT END -->
+            </div>
+        </div>
+    </div>
+</main>

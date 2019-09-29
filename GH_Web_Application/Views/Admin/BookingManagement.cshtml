@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Booking>
+@{
+    ViewData["Title"] = "Administrator Management";
+    Layout = "_AdminLayout";
+}
+
+
+<h1>List of Bookings:</h1>
+
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">CustomerId</th>
+            <th scope="col">HandymanId</th>
+            <th scope="col">Title</th>
+            <th scope="col">Location</th>
+            <th scope="col">Detail</th>
+            <th scope="col">Price</th>
+            <th scope="col">State</th>
+            <th scope="col">Time</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (Booking item in Model)
+        {
+        <tr>
+            <th scope="row">@item.BookingId</th>
+            <td>@item.CustomerId</td>
+            <td>@item.HandymanId</td>
+            <td>@item.BookingTitle</td>
+            <td>@item.Location</td>
+            <td>@item.WorkingDetail</td>
+            <td>@item.Price</td>
+            <td>@item.State</td>
+            <td>@item.Date</td>
+        </tr>
+        }
+    </tbody>
+</table>

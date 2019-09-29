@@ -1,0 +1,13 @@
+﻿@model IEnumerable<UserAccount>
+@{
+    ViewData["Title"] = "Home";
+    Layout = "_HomeLayout";
+}
+<p> List of account: </p>
+@foreach (UserAccount account in Model)
+{
+    <p>AccountID: @account.UserId</p>
+    <p>Email Address: @account.EmailAddress</p>
+    <p>Password: @account.Password</p>
+    <hr />
+}

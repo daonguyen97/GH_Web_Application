@@ -1,0 +1,29 @@
+﻿@model UserAccount
+<form asp-action="Register" method="post">
+    <div asp-validation-summary="All"></div>
+    <div class="form-group">
+        <label asp-for="EmailAddress" class="text-normal text-dark">Email Address</label>
+        <input asp-for="EmailAddress" type="email" class="form-control" placeholder="name@email.com">
+    </div>
+    <div class="form-group">
+        <label asp-for="Password" class="text-normal text-dark">Password</label>
+        <input asp-for="Password" type="password" class="form-control" placeholder="Password">
+    </div>
+    <div class="form-group">
+        <label asp-for="Name" class="text-normal text-dark">Name</label>
+        <input asp-for="Name" type="text" class="form-control" placeholder="John Doe">
+    </div>
+    <div class="form-group">
+        <label asp-for="PhoneNumber" class="text-normal text-dark">Phone Number</label>
+        <input asp-for="PhoneNumber" type="number" class="form-control" placeholder="+16471234567">
+    </div>
+
+    <div class="form-group">
+        <div class="peers ai-c jc-sb fxw-nw">
+            <div class="peer"></div>
+            <div class="peer">
+                <button class="btn btn-primary">Register</button>
+            </div>
+        </div>
+    </div>
+</form>
